@@ -43,9 +43,9 @@ Debug.Log(jsonChara);
 
 CharaInfo loadedCharaData = JsonUtility.FromJson<CharaInfo>(jsonChara);
 
-Debug.Log("id:"+ loadedCharaData.id[0]);
-Debug.Log("categoryA:"+ loadedCharaData.categoryA[0]);
-Debug.Log("categoryB:"+ loadedCharaData.categoryB[0]);
+Debug.Log("id:"+ loadedCharaData.id);
+Debug.Log("categoryA:"+ loadedCharaData.categoryA);
+Debug.Log("categoryB:"+ loadedCharaData.categoryB);
 
     }
 
