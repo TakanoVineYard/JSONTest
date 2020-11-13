@@ -2,12 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime;
 
 public class GameHandler : MonoBehaviour
 {
+    
+public int randomNum;
+
+
     // Start is called before the first frame update
     private void Start()
     {
+
+        randomNum = UnityEngine.Random.Range(0, 7);
+
      Debug.Log("GameHandler.Start");   
 /*
 //プレイヤー情報クラスの継承と代入
@@ -45,17 +53,26 @@ Debug.Log(jsonChara);
 
 CharacterInfoAll infoAll = JsonUtility.FromJson<CharacterInfoAll>(jsonChara);
 
-Debug.Log(infoAll.infoArray[0].id);
+//Debug.Log(infoAll.infoArray[0].id);
 
-//Debug.Log("id:"+ infoAll.infoArray[0].id);
-//Debug.Log("categoryA:"+ infoAll.infoArray[0].categoryA);
-//Debug.Log("categoryB:"+ infoAll.infoArray[0].categoryB);
+
+
+Debug.Log("id:"+ infoAll.infoArray[randomNum].id);
+Debug.Log("categoryA:"+ infoAll.infoArray[randomNum].categoryA);
+Debug.Log("categoryB:"+ infoAll.infoArray[randomNum].categoryB);
+
+
+
+
+//Debug.Log("id:"+ infoAll.infoArray[1].id);
+//Debug.Log("categoryA:"+ infoAll.infoArray[1].categoryA);
+//Debug.Log("categoryB:"+ infoAll.infoArray[1].categoryB);
 
     }
     
 //テストキャラ情報のクラス  
 [System.Serializable]
-    private class CharaInfo{
+    public class CharacterInfo{
     public string id;
     public string categoryA;
     public string categoryB;
