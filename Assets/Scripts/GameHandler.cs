@@ -41,25 +41,38 @@ public class GameHandler : MonoBehaviour
 string jsonChara = File.ReadAllText(Application.dataPath + "/Resources/JsonTestData.json");
 Debug.Log(jsonChara);
 
-CharaInfo loadedCharaData = JsonUtility.FromJson<CharaInfo>(jsonChara);
+//CharaInfo loadedCharaData = JsonUtility.FromJson<CharaInfo>(jsonChara);
 
-Debug.Log("id:"+ loadedCharaData.id);
-Debug.Log("categoryA:"+ loadedCharaData.categoryA);
-Debug.Log("categoryB:"+ loadedCharaData.categoryB);
+CharacterInfoAll infoAll = JsonUtility.FromJson<CharacterInfoAll>(jsonChara);
+
+Debug.Log(infoAll.infoArray[0].id);
+
+//Debug.Log("id:"+ infoAll.infoArray[0].id);
+//Debug.Log("categoryA:"+ infoAll.infoArray[0].categoryA);
+//Debug.Log("categoryB:"+ infoAll.infoArray[0].categoryB);
 
     }
-
     
 //テストキャラ情報のクラス  
+[System.Serializable]
     private class CharaInfo{
-    public string[] id;
-    public string[] categoryA;
-    public string[] categoryB;
-    public string[] categoryC;
-    public string[] categoryD;
+    public string id;
+    public string categoryA;
+    public string categoryB;
+    public string categoryC;
+    public string categoryD;
 
 
     }
+
+
+[System.Serializable]
+public class CharacterInfoAll
+{
+    public CharacterInfo[] infoArray;
+}
+
+
 /*
 {
 	"CharaInfo": [
