@@ -51,13 +51,15 @@ Debug.Log(jsonChara);
 
 //CharaInfo loadedCharaData = JsonUtility.FromJson<CharaInfo>(jsonChara);
 
+//配列メンバ持ってるクラスの継承　
+
 CharacterInfoAll infoAll = JsonUtility.FromJson<CharacterInfoAll>(jsonChara);
 
 //Debug.Log(infoAll.infoArray[0].id);
 
 
 
-Debug.Log("id:"+ infoAll.infoArray[randomNum].id);
+Debug.Log("id:"+ (infoAll.infoArray[randomNum].id).PadLeft(4,'0'));
 Debug.Log("categoryA:"+ infoAll.infoArray[randomNum].categoryA);
 Debug.Log("categoryB:"+ infoAll.infoArray[randomNum].categoryB);
 
@@ -70,7 +72,7 @@ Debug.Log("categoryB:"+ infoAll.infoArray[randomNum].categoryB);
 
     }
     
-//テストキャラ情報のクラス  
+//キャラ情報のJSONの内容と揃えたやつ  
 [System.Serializable]
     public class CharacterInfo{
     public string id;
@@ -83,6 +85,8 @@ Debug.Log("categoryB:"+ infoAll.infoArray[randomNum].categoryB);
     }
 
 
+
+//キャラ情報の配列変数。ここのメンバ名がJSONの名前と揃ってること
 [System.Serializable]
 public class CharacterInfoAll
 {
